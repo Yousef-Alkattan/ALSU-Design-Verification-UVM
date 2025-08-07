@@ -6,7 +6,7 @@ This repository contains the complete UVM testbench and design files for verifyi
 
 ## 🔷 Introduction
 
-This project presents a **Universal Verification Methodology (UVM)**-based testbench for verifying an **Arithmetic Logic and Shift Unit (ALSU)**.
+This project presents a **Universal Verification Methodology (UVM)** testbench for verifying an **Arithmetic Logic and Shift Unit (ALSU)**.
 
 The ALSU performs a variety of arithmetic, logical, reduction, and shift operations on signed 3-bit operands `A` and `B`, and provides outputs including LEDs and a 6-bit signed result. The design includes control inputs for bypassing, reduction, and operation selection.
 
@@ -30,21 +30,28 @@ Our verification environment ensures comprehensive checking of functional correc
 | opcode       | Input [2:0]   | Operation selector                                                    |
 | A            | Input signed [2:0] | Signed operand A                                                 |
 | B            | Input signed [2:0] | Signed operand B                                                 |
-| leds         | Output [15:0] | LED indicators representing operation results/status                 |
+| leds         | Output [15:0] | LED indicators that blinks if an invalid case occurs                 |
 | out          | Output signed [5:0] | Signed result of the ALSU operation                              |
 
 ---
 
 ## 📁 File Descriptions
 
-### 1. Design Files
+### 1. Project Reports
+
+- `Yousef_Alkattan_Project2_sv7....`:  
+  Includes all codes & Simulation Waveforms
+
+---
+
+### 2. Design Files
 
 - `ALSU.v`  
   RTL design of the ALSU module under test.
 
 ---
 
-### 2. UVM Testbench Files
+### 3. UVM Testbench Files
 
 #### 🧱 Testbench Components
 
@@ -91,14 +98,14 @@ Our verification environment ensures comprehensive checking of functional correc
 
 ---
 
-### 3. Assertions
+### 4. Assertions
 
 - `alsu_assertions.sv`  
   SystemVerilog assertions for protocol and data property checking.
 
 ---
 
-### 4. Do file & File List
+### 5. Do file & File List
 
 - `alsu_files.list`  
   List of all RTL and testbench files for compilation.
@@ -116,28 +123,7 @@ Our verification environment ensures comprehensive checking of functional correc
 
 ---
 
-## 🏃‍♂️ How to Run
+### Conclusion
 
-1. **Compile:**
+This project demonstrates a complete UVM-based verification environment for a parameterized FIFO design. Using SystemVerilog, UVM methodology, and ModelSim simulation, the testbench provides reusable, scalable components that achieve functional coverage, constrained random stimulus, and self-checking mechanisms. The UVM approach allows for modular verification that can be easily extended to other FIFO configurations or similar designs. This ensures a robust verification flow capable of identifying corner-case bugs and validating the FIFO against design specifications.
 
-    ```tcl
-    vlog -f alsu_files.list
-    ```
-
-2. **Simulate:**
-
-    ```tcl
-    vsim -sv_seed random work.alsu_top
-    ```
-
-3. **Run Simulation:**
-
-    ```tcl
-    run -all
-    ```
-
-✅ *Tip:*  
-Alternatively, use the provided `.do` script:
-
-```tcl
-do do_alsu.do
