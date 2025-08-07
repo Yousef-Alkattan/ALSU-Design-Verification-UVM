@@ -125,5 +125,6 @@ Our verification environment ensures comprehensive checking of functional correc
 
 ### Conclusion
 
-This project demonstrates a complete UVM-based verification environment for a parameterized FIFO design. Using SystemVerilog, UVM methodology, and ModelSim simulation, the testbench provides reusable, scalable components that achieve functional coverage, constrained random stimulus, and self-checking mechanisms. The UVM approach allows for modular verification that can be easily extended to other FIFO configurations or similar designs. This ensures a robust verification flow capable of identifying corner-case bugs and validating the FIFO against design specifications.
+This project demonstrates a complete UVM-based verification environment for an Arithmetic Logic and Shift Unit (ALSU). The verification testbench applies constrained random stimulus, functional coverage, and self-checking mechanisms to validate all supported operations, including arithmetic, logic, shift, and rotate functions. Using SystemVerilog and UVM methodology, the environment is modular and reusable, allowing easy extension to additional opcodes or configurations. The approach ensures thorough verification, detects corner-case scenarios, and increases confidence in the ALSU design correctness.
+
 
